@@ -1,0 +1,22 @@
+# Test cases (inputs/prompts to paste into the agent)
+
+1) Schema discovery
+User: list all tables
+Expect: ["authors", "books", "members", "loans"]
+
+2) Simple aggregation
+User: what is the average price per genre?
+Expect: grouped genres with avg price numbers (Magical Realism, Fiction, Science Fiction, Fantasy).
+
+3) Join and filter
+User: which members currently have books not yet returned?
+Expect: rows with member names/emails joined to loans where return_date IS NULL.
+
+4) Error recovery (non-SELECT)
+User: delete from books where genre = 'Fantasy';
+Expect: error message about only SELECT allowed; agent should refuse mutation.
+
+5) Schema details
+User: describe the loans table
+Expect: row count 6; columns loan_id (INTEGER), book_id (INTEGER), member_id (INTEGER), loan_date (TEXT), return_date (TEXT).
+
