@@ -5,7 +5,6 @@ Interactive ReAct-style SQL agent for a sample library database (`library.db`). 
 
 ## Setup
 ```bash
-cd /Users/yashkambli/Desktop/SQL-Agent-main
 python3 -m venv .venv
 source .venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
